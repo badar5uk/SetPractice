@@ -26,6 +26,8 @@ public class CommonCharacters {
     }
 
     public static void charSet(String x, String y){
+        x.toLowerCase();
+        y.toLowerCase();
         char[] firstArray = x.toCharArray();
         char[] secondArray = y.toCharArray();
 
