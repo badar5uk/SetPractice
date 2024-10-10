@@ -1,7 +1,4 @@
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class FirstRepeatedElement {
 
@@ -13,24 +10,21 @@ public class FirstRepeatedElement {
              - use an if statement to check if the number after index i is equal to i ( i == i+1 )
              - Change boolean to true and return than element
      */
-    static List<Integer> numbers = Arrays.asList(1,2,2,3,3,3,3,3,4,5,6,7);
-    static Set<Integer> numberSet = new HashSet<>(numbers);
+    static List<Integer> numbers = Arrays.asList(1, 2, 2, 3, 3, 3, 3, 3, 4, 5, 6, 7);
+    static Set<Integer> numberSet = new HashSet<>();
+    static Set<Integer> displaySet = new HashSet<>(numbers);
 
-    public static void main(String[]args){
-        Integer x = 0;
-        for (Integer i = 0; i < numbers.size(); i++){
-            if(numbers.get(i) == numbers.get(i+1)){
-                x = numbers.get(i);
+    public static void main(String[] args) {
+
+        for (Integer x : numbers) {
+            if (false == numberSet.add(x)) {
+                System.out.println("Duplicate found: " + x);
                 break;
             }
         }
-        for (Integer arrayAdd:numbers){
-            numberSet.add(arrayAdd);
-        }
 
-        System.out.println("First repeating element is: " + x );
-        System.out.println("Our Set is: " + numberSet);
-        System.out.println("The original List is: " + numbers );
+        System.out.println("Our Set is: " + displaySet);
+        System.out.println("The original List is: " + numbers);
 
     }
 }
