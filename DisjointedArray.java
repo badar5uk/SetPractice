@@ -10,29 +10,18 @@ public class DisjointedArray {
              - convert it into a Set.
              - compare if set 1 is equals to set 2
      */
-    static Set<Integer> numberSet1= new HashSet<>(Arrays.asList(3,2,1));
-    static Set<Integer> numberSet2= new HashSet<>(Arrays.asList(1,2,3));
-    public static void main(String[]args){
-        Boolean checker = false;
+    static Set<Integer> numberSet1 = new HashSet<>(Arrays.asList(5, 6, 0));
+    static Set<Integer> numberSet2 = new HashSet<>(Arrays.asList(1, 2, 3));
+
+    public static void main(String[] args) {
 
         Set<Integer> intersection = new HashSet<>(numberSet1);
+
         intersection.retainAll(numberSet2);
-
-        for (Integer x : numberSet1){
-            if(numberSet2.contains(x)){
-                checker = false;
-            }
-            else {
-                checker = true;
-            }
-        }
-        if(checker = true){
+        if (intersection.isEmpty() == false) {
             System.out.println("The repeating elements are: " + intersection);
-        }
-        else {
+        } else if (intersection.isEmpty() == true) {
             System.out.println("The two arrays are disjointed");
-
         }
-
     }
 }
