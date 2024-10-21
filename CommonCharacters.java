@@ -12,22 +12,24 @@ public class CommonCharacters {
              - use an intersection function for characters
              - print the intersecting characters ( elements)
      */
-    static Set<Character> stringArray1 = new HashSet<>();
-    static Set<Character> stringArray2 = new HashSet<>();
+
 
     public static void main(String[] args) {
         System.out.println("Enter the first String: ");
-        Scanner scanner1 = new Scanner(System.in);
-        String firstInp = scanner1.nextLine();
+        Scanner scanner = new Scanner(System.in);
+        String firstInp = scanner.nextLine();
         System.out.println("Enter the second String: ");
-        Scanner scanner2 = new Scanner(System.in);
-        String secondInp = scanner2.nextLine();
+        String secondInp = scanner.nextLine();
         charSet(firstInp,secondInp);
     }
 
     public static void charSet(String x, String y){
-        x.toLowerCase();
-        y.toLowerCase();
+        // initializing Sets
+        Set<Character> stringArray1 = new HashSet<>();
+        Set<Character> stringArray2 = new HashSet<>();
+
+        x = x.toLowerCase();
+        y = y.toLowerCase();
         char[] firstArray = x.toCharArray();
         char[] secondArray = y.toCharArray();
 
