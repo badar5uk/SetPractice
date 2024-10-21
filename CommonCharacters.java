@@ -25,8 +25,8 @@ public class CommonCharacters {
 
     public static void charSet(String x, String y){
         // initializing Sets
-        Set<Character> stringArray1 = new HashSet<>();
-        Set<Character> stringArray2 = new HashSet<>();
+        Set<Character> stringSet1 = new HashSet<>();
+        Set<Character> stringSet2 = new HashSet<>();
 
         x = x.toLowerCase();
         y = y.toLowerCase();
@@ -34,13 +34,13 @@ public class CommonCharacters {
         char[] secondArray = y.toCharArray();
 
         for (Character testarray: firstArray){
-            stringArray1.add(testarray);
+            stringSet1.add(testarray);
         }
         for (Character testarray: secondArray){
-            stringArray2.add(testarray);
+            stringSet2.add(testarray);
         }
-        Set<Character> intersection = new HashSet<>(stringArray1);
-        intersection.retainAll(stringArray2);
+        Set<Character> intersection = new HashSet<>(stringSet1);
+        intersection.retainAll(stringSet2);
         System.out.println("The letters: "+intersection+ " appear in both strings");
     }
 }
